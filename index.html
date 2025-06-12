@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmethystMC</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+      body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background: #1e1e2f;
+        color: #f0f0f0;
+      }
+
+      header {
+        background-color: #6b4ca1;
+        color: white;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      header img {
+        height: 50px;
+        margin-right: 1rem;
+      }
+
+      nav a {
+        color: white;
+        margin-left: 1rem;
+        text-decoration: none;
+        font-weight: bold;
+      }
+
+      main {
+        padding: 2rem;
+        max-width: 960px;
+        margin: auto;
+      }
+
+      .ip-box {
+        background: #2c2c3e;
+        padding: 1rem;
+        border: 2px solid #8e7cc3;
+        border-radius: 8px;
+        max-width: 400px;
+        margin: 1rem auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .ip-box input {
+        border: none;
+        font-size: 1rem;
+        width: 100%;
+        margin-right: 1rem;
+        background: transparent;
+        color: #fff;
+      }
+
+      .ip-box button {
+        background: #8e7cc3;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .rules {
+        display: none;
+        margin-top: 7rem;
+        margin-left: 7rem;
+      }
+
+      .rules h2 {
+        color: #c2aff0;
+      }
+
+      ul {
+        line-height: 1.6;
+      }
+
+      li {
+        margin-bottom: 6px;
+      }
+
+      .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .gallery img {
+        width: 100%;
+        border-radius: 8px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+      }
+
+      .logo {
+        display: block;
+        margin: 1rem auto;
+        max-width: 200px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div style="display: flex; align-items: center;">
+        <img src="logo.png" alt="AmethystMC Logo">
+        <h1>AmethystMC</h1>
+      </div>
+      <nav>
+        <a href="#" onclick="showSection('home')">Home</a>
+        <a href="#" onclick="showSection('rules')">Rules</a>
+      </nav>
+    </header>
+
+    <main id="home">
+      <img src="logo.png" alt="AmethystMC Logo" class="logo">
+      <h2>Welcome to AmethystMC</h2>
+      <p>AmethystMC is a community-driven survival server where creativity meets challenge. Enjoy a rich Minecraft
+        experience filled with events, PvP, and a balance between freedom and fairness. Build, raid, explore, and trade
+        in a world full of possibility.</p>
+      <div class="ip-box">
+        <input type="text" id="serverIP" value="play.amethystmc.net" readonly>
+        <button onclick="copyIP()">Copy</button>
+      </div>
+      <h3>In-Game Screenshots</h3>
+      <div class="gallery">
+        <img src="screenshot1.jpg" alt="Build Example 1">
+        <img src="screenshot2.jpg" alt="Build Example 2">
+        <img src="screenshot3.jpg" alt="Community Area">
+      </div>
+    </main>
+
+    <section class="rules" id="rules">
+      <h2>Server Rules</h2>
+      <h3>1. Gameplay & Survival</h3>
+      <ul>
+        <li>Griefing and raiding <strong>are allowed</strong>, but excessive destruction is not.</li>
+        <ul>
+          <li>Do <strong>not</strong> completely flatten bases, lava-cast structures, or leave areas unplayable.</li>
+          <li>Leave behind enough so players can rebuild and continue playing.</li>
+        </ul>
+        <li>PvP is allowed outside of protected zones unless otherwise stated.</li>
+        <ul>
+          <li>No spawn camping or constant targeting of the same player.</li>
+        </ul>
+      </ul>
+      <h3>2. Fair Play</h3>
+      <ul>
+        <li>No hacked clients or unfair mods:</li>
+        <ul>
+          <li>❌ X-ray, fly hacks, kill auras, auto-clickers, duplication exploits.</li>
+          <li>✅ Cosmetic/performance mods like OptiFine, minimaps (without cave/radar), and HUDs are fine.</li>
+        </ul>
+        <li>No exploiting glitches, bugs, or unintended mechanics for unfair advantage.</li>
+      </ul>
+      <h3>3. Builds & World</h3>
+      <ul>
+        <li>Do not lag the server with large redstone clocks, spawner mobs, or chunk loaders.</li>
+        <li>Avoid making the world ugly near spawn:</li>
+        <ul>
+          <li>No random holes, sky towers, or lava spam.</li>
+        </ul>
+        <li>Public/shared spaces must be treated with respect.</li>
+      </ul>
+      <h3>4. Chat & Community</h3>
+      <ul>
+        <li>Be respectful — banter is welcome, but hate isn’t.</li>
+        <ul>
+          <li>No racism, hate speech, harassment, or personal threats.</li>
+          <li>Use common sense and keep it fun.</li>
+        </ul>
+        <li>No spamming or advertising external servers or links.</li>
+        <li>English only in global chat unless stated otherwise.</li>
+      </ul>
+      <h3>5. Spawn & Server Areas</h3>
+      <ul>
+        <li>Spawn and server builds are protected zones — no griefing, PvP, or trolling.</li>
+        <li>Use designated areas for trades, warps, events, etc.</li>
+      </ul>
+      <h3>6. Staff & Enforcement</h3>
+      <ul>
+        <li>Admins and moderators reserve the right to intervene at any time.</li>
+        <li>Breaking the rules may result in:</li>
+        <ul>
+          <li>Warnings</li>
+          <li>Temporary bans</li>
+          <li>Permanent bans (for major offenses)</li>
+        </ul>
+      </ul>
+      <h3>7. Use Common Sense</h3>
+      <p>If you have to ask whether something is allowed — it probably isn’t. When in doubt, ask staff or keep it
+        reasonable.</p>
+    </section>
+
+    <script>
+      function copyIP() {
+        const ipInput = document.getElementById("serverIP");
+        ipInput.select();
+        ipInput.setSelectionRange(0, 99999); // For mobile
+        document.execCommand("copy");
+        alert("Copied IP: " + ipInput.value);
+      }
+
+      function showSection(id) {
+        document.getElementById("home").style.display = id === "home" ? "block" : "none";
+        document.getElementById("rules").style.display = id === "rules" ? "block" : "none";
+      }
+
+      // Set default view
+      showSection('home');
+    </script>
+  </body>
+
+</html>
