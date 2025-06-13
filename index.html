@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AmethystMC</title>
+    <title>ShardedMC</title>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
@@ -114,8 +114,8 @@
   <body>
     <header>
       <div style="display: flex; align-items: center;">
-        <img src="logo.png" alt="AmethystMC Logo">
-        <h1>AmethystMC</h1>
+        <img src="logo.png" alt="ShardedMC Logo">
+        <h1>ShardedMC</h1>
       </div>
       <nav>
         <a href="#" onclick="showSection('home')">Home</a>
@@ -124,13 +124,13 @@
     </header>
 
     <main id="home">
-      <img src="logo.png" alt="AmethystMC Logo" class="logo">
-      <h2>Welcome to AmethystMC</h2>
-      <p>AmethystMC is a community-driven survival server where creativity meets challenge. Enjoy a rich Minecraft
+      <img src="logo.png" alt="ShardedMC Logo" class="logo">
+      <h2>Welcome to ShardedMC</h2>
+      <p>ShardedMC is a community-driven survival server where creativity meets challenge. Enjoy a rich Minecraft
         experience filled with events, PvP, and a balance between freedom and fairness. Build, raid, explore, and trade
         in a world full of possibility.</p>
       <div class="ip-box">
-        <input type="text" id="serverIP" value="mc.proplayer919.dev" readonly>
+        <input type="text" id="serverIP" value="play.shardedmc.org" readonly>
         <button onclick="copyIP()">Copy</button>
       </div>
       <h3>In-Game Screenshots</h3>
@@ -209,7 +209,6 @@
         ipInput.select();
         ipInput.setSelectionRange(0, 99999); // For mobile
         document.execCommand("copy");
-        alert("Copied IP: " + ipInput.value);
       }
 
       function showSection(id) {
