@@ -19,6 +19,34 @@ html {
   color: var(--text);
 }
 
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: rgba(30, 30, 47, 0.8);
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(8px);
+}
+
+header img {
+  height: 40px;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 1.5rem;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
 .slideshow {
   position: relative;
   height: 100vh;
