@@ -1,88 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ShardedMC</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-  <header>
-    <img src="logo.png" alt="ShardedMC Logo" />
-    <nav>
-      <a href="/index.html">Home</a>
-      <a href="/rules.html">Rules</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShardedMC</title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-  <div class="slideshow">
-    <div class="slide active" style="background-image: url('screenshots/shot1.png');">
-      <div class="caption">Spawn 1</div>
-    </div>
-    <div class="slide" style="background-image: url('screenshots/shot2.png');">
-      <div class="caption">Spawn 2</div>
-    </div>
-    <div class="slide" style="background-image: url('screenshots/shot3.png');">
-      <div class="caption">Admin's Base</div>
-    </div>
-    <div class="slide" style="background-image: url('screenshots/shot4.png');">
-      <div class="caption">PVP Arena</div>
-    </div>
-    <div class="slide" style="background-image: url('screenshots/shot5.png');">
-      <div class="caption">Lush Cave</div>
-    </div>
-    <div class="slide" style="background-image: url('screenshots/shot6.png');">
-      <div class="caption">Tree</div>
-    </div>
+  <body>
 
-    <div class="arrow left" onclick="prevSlide()"><img src="back.svg"></div>
-    <div class="arrow right" onclick="nextSlide()"><img src="forward.svg"></div>
-
-    <div class="center-content">
+    <header>
       <img src="logo.png" alt="ShardedMC Logo" />
-      <h1>Welcome to ShardedMC</h1>
-      <div class="ip-box">
-        <input type="text" id="serverIP" value="play.shardedmc.org" readonly />
-        <button onclick="copyIP()">Copy IP</button>
+      <nav>
+        <a href="/index.html">Home</a>
+        <a href="/rules.html">Rules</a>
+      </nav>
+    </header>
+
+    <div class="slideshow">
+      <div class="slide active" style="background-image: url('screenshots/shot1.png');">
+        <div class="caption">Spawn</div>
+      </div>
+      <div class="slide" style="background-image: url('screenshots/shot2.png');">
+        <div class="caption">Spawn</div>
+      </div>
+      <div class="slide" style="background-image: url('screenshots/shot3.png');">
+        <div class="caption">Geode Base</div>
+      </div>
+      <div class="slide" style="background-image: url('screenshots/shot4.png');">
+        <div class="caption">PvP Arena</div>
+      </div>
+      <div class="slide" style="background-image: url('screenshots/shot5.png');">
+        <div class="caption">Lush Cave</div>
+      </div>
+      <div class="slide" style="background-image: url('screenshots/shot6.png');">
+        <div class="caption">Tree</div>
+      </div>
+
+      <div class="arrow left" onclick="prevSlide()"><img src="back.svg"></div>
+      <div class="arrow right" onclick="nextSlide()"><img src="forward.svg"></div>
+
+      <div class="center-content">
+        <img src="logo.png" alt="ShardedMC Logo" />
+        <h1>Welcome to ShardedMC</h1>
+        <div class="ip-box">
+          <input type="text" id="serverIP" value="play.shardedmc.org" readonly />
+          <button onclick="copyIP()">Copy IP</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script>
-    const slides = document.querySelectorAll(".slide");
-    let currentSlide = 0;
+    <script>
+      const slides = document.querySelectorAll(".slide");
+      let currentSlide = 0;
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove("active");
-        if (i === index) slide.classList.add("active");
-      });
-    }
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove("active");
+          if (i === index) slide.classList.add("active");
+        });
+      }
 
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
 
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    }
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+      }
 
-    function copyIP() {
-      const ipInput = document.getElementById("serverIP");
-      ipInput.select();
-      ipInput.setSelectionRange(0, 99999);
-      navigator.clipboard.writeText(ipInput.value).then(() => {
-        alert("IP copied to clipboard!");
-      });
-    }
+      function copyIP() {
+        const ipInput = document.getElementById("serverIP");
+        ipInput.select();
+        ipInput.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(ipInput.value).then(() => {
+          alert("IP copied to clipboard!");
+        });
+      }
 
-    setInterval(nextSlide, 7000);
-  </script>
+      setInterval(nextSlide, 7000);
+    </script>
 
-</body>
+  </body>
+
 </html>
