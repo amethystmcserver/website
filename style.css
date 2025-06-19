@@ -3,6 +3,7 @@
   --accent: #c2aff0;
   --text: #f0f0f0;
   --primary: #6b4ca1;
+  --muted: #aaa;
 }
 
 * {
@@ -12,8 +13,8 @@
   font-family: 'Inter', sans-serif;
 }
 
-body,
-html {
+html,
+body {
   height: 100%;
   background: var(--bg-dark);
   color: var(--text);
@@ -25,11 +26,11 @@ header {
   width: 100%;
   padding: 1rem 2rem;
   background: rgba(30, 30, 47, 0.8);
+  backdrop-filter: blur(8px);
   z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  backdrop-filter: blur(8px);
 }
 
 header img {
@@ -41,6 +42,7 @@ nav a {
   text-decoration: none;
   margin-left: 1.5rem;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
@@ -49,15 +51,15 @@ nav a:hover {
 
 .slideshow {
   position: relative;
-  height: 100vh;
   width: 100%;
+  height: 100vh;
   overflow: hidden;
 }
 
 .slide {
   position: absolute;
-  height: 100%;
   width: 100%;
+  height: 100%;
   background-size: cover;
   background-position: center;
   opacity: 0;
@@ -73,8 +75,8 @@ nav a:hover {
   position: absolute;
   bottom: 2rem;
   left: 2rem;
-  background: rgba(0, 0, 0, 0.4);
   padding: 0.8rem 1.2rem;
+  background: rgba(0, 0, 0, 0.4);
   border-radius: 6px;
   font-size: 1.2rem;
   text-shadow: 0 0 4px #000;
@@ -92,6 +94,7 @@ nav a:hover {
   cursor: pointer;
   z-index: 2;
   user-select: none;
+  transition: background 0.3s;
 }
 
 .arrow:hover {
@@ -102,16 +105,13 @@ nav a:hover {
   left: 1rem;
 }
 
-.arrow.left img {
-  transform: translateY(-5px);
-}
-
 .arrow.right {
   right: 1rem;
 }
 
+.arrow.left img,
 .arrow.right img {
-  transform: translateY(-5px)
+  transform: translateY(-5px);
 }
 
 .center-content {
@@ -129,16 +129,16 @@ nav a:hover {
 }
 
 .ip-box {
-  background: rgba(0, 0, 0, 0.5);
-  border: 2px solid var(--primary);
-  color: var(--text);
-  padding: 0.8rem 1rem;
-  border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 1rem;
   margin-top: 1rem;
+  padding: 0.8rem 1rem;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid var(--primary);
+  border-radius: 8px;
+  color: var(--text);
 }
 
 .ip-box input {
@@ -158,6 +158,7 @@ nav a:hover {
   font-weight: bold;
   border-radius: 4px;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
 .ip-box button:hover {
@@ -166,4 +167,52 @@ nav a:hover {
 
 h1 {
   text-shadow: 1px -1px 16px black;
+}
+
+.rules-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 100px 0 0 8rem;
+  overflow: hidden;
+}
+
+h2 {
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+  color: var(--accent);
+  text-shadow: 1px -1px 8px black;
+}
+
+h3 {
+  font-size: 1.6rem;
+  margin: 2rem 0 0.8rem;
+  color: var(--accent);
+  border-left: 2px solid var(--accent);
+  padding-left: 0.75rem;
+}
+
+ul {
+  margin: 0 0 1rem 1.5rem;
+}
+
+ul ul {
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  list-style-type: circle;
+  color: var(--muted);
+}
+
+li {
+  margin-bottom: 0.4rem;
+}
+
+p {
+  margin-top: 1rem;
+  font-style: italic;
+  color: var(--muted);
+}
+
+strong {
+  color: var(--accent);
 }
