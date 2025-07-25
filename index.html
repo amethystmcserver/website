@@ -1,32 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ShardedMC</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
 
-  <header>
-    <img src="logo.png" alt="ShardedMC Logo" />
-    <nav>
-      <a href="/index.html">Home</a>
-      <a href="/rules.html">Rules</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ShardedMC</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/ac9ab6562b.js" crossorigin="anonymous"></script>
+  </head>
 
   <div class="slideshow">
     <div class="slide active" style="background-image: url('screenshots/shot1.png');">
-      <div class="caption">Spawn 1</div>
+      <div class="caption">Spawn</div>
     </div>
     <div class="slide" style="background-image: url('screenshots/shot2.png');">
       <div class="caption">Spawn 2</div>
     </div>
     <div class="slide" style="background-image: url('screenshots/shot3.png');">
-      <div class="caption">Admin's Base</div>
+      <div class="caption">Geode Base</div>
     </div>
     <div class="slide" style="background-image: url('screenshots/shot4.png');">
       <div class="caption">PVP Arena</div>
@@ -56,51 +52,80 @@
       <div class="caption">Sugarcane</div>
     </div>
 
-    <div class="arrow left" onclick="prevSlide()"><img src="back.svg"></div>
-    <div class="arrow right" onclick="nextSlide()"><img src="forward.svg"></div>
-
-    <div class="center-content">
+    <header>
       <img src="logo.png" alt="ShardedMC Logo" />
-      <h1>Welcome to ShardedMC</h1>
-      <div class="ip-box">
-        <input type="text" id="serverIP" value="play.shardedmc.org" readonly />
-        <button onclick="copyIP()">Copy IP</button>
+      <nav>
+        <a href="/index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <a href="/rules.html"><i class="fa-solid fa-gavel"></i> Rules</a>
+        <a href="https://forms.gle/6kRbsh7d7Bp9dNib6"><i class="fa-solid fa-shield"></i> Appeal Form</a>
+        <a href="https://discord.gg/R3mxzfDvwE"><i class="fab fa-discord"></i> Discord</a>
+        <a href="https://bsky.app/profile/shardedmc.org"><i class="fab fa-bluesky"></i> Bluesky</a>
+      </nav>
+    </header>
+
+    <div class="slideshow">
+      <div class="slide active" style="background-image: url('screenshots/shot1.png');">
+        <div class="caption">Spawn</div>
+      </div>
+      <div class="slide" style="background-image: url('screenshots/shot2.png');">
+        <div class="caption">Geode Base</div>
+      </div>
+      <div class="slide" style="background-image: url('screenshots/shot3.png');">
+        <div class="caption">PvP Arena</div>
+      </div>
+      <div class="slide" style="background-image: url('screenshots/shot4.png');">
+        <div class="caption">Lush Cave</div>
+      </div>
+      <div class="slide" style="background-image: url('screenshots/shot5.png');">
+        <div class="caption">Tree</div>
+      </div>
+
+      <div class="arrow left" onclick="prevSlide()"><img src="back.svg"></div>
+      <div class="arrow right" onclick="nextSlide()"><img src="forward.svg"></div>
+
+      <div class="center-content">
+        <img src="logo.png" alt="ShardedMC Logo" />
+        <h1>Welcome to ShardedMC</h1>
+        <div class="ip-box">
+          <input type="text" id="serverIP" value="play.shardedmc.org" readonly />
+          <button onclick="copyIP()">Copy IP</button>
+        </div>
       </div>
     </div>
-  </div>
 
-  <script>
-    const slides = document.querySelectorAll(".slide");
-    let currentSlide = 0;
+    <script>
+      const slides = document.querySelectorAll(".slide");
+      let currentSlide = 0;
 
-    function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.remove("active");
-        if (i === index) slide.classList.add("active");
-      });
-    }
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.remove("active");
+          if (i === index) slide.classList.add("active");
+        });
+      }
 
-    function nextSlide() {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showSlide(currentSlide);
-    }
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
 
-    function prevSlide() {
-      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(currentSlide);
-    }
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+      }
 
-    function copyIP() {
-      const ipInput = document.getElementById("serverIP");
-      ipInput.select();
-      ipInput.setSelectionRange(0, 99999);
-      navigator.clipboard.writeText(ipInput.value).then(() => {
-        alert("IP copied to clipboard!");
-      });
-    }
+      function copyIP() {
+        const ipInput = document.getElementById("serverIP");
+        ipInput.select();
+        ipInput.setSelectionRange(0, 99999);
+        navigator.clipboard.writeText(ipInput.value).then(() => {
+          alert("IP copied to clipboard!");
+        });
+      }
 
-    setInterval(nextSlide, 7000);
-  </script>
+      setInterval(nextSlide, 5000);
+    </script>
 
-</body>
+  </body>
+
 </html>
